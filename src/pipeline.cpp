@@ -1,5 +1,16 @@
 /*******************************************************************************
  *
+ * Program name: pipeline
+ * Author: Magnet
+ *
+ * Description: This file contains the functions that run the three-stage 
+ * in order pipeline that drives the SIGHTLINE systems.
+ *
+*******************************************************************************/
+
+
+/*******************************************************************************
+ *
  * Function name: fetch
  * Author: Magnet
  *
@@ -9,8 +20,6 @@
  * Pseudo-code:
  *
 *******************************************************************************/
-
-// Functions for the three stage in order pipeline
 
 /*******************************************************************************
  *
@@ -58,6 +67,6 @@ struct shell_code decode(struct program_code fetch) {
 #include opcodes.h
 
 bool execute(struct shell_code decode) {
-
+	
 
 }
