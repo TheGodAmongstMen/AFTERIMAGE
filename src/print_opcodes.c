@@ -1,43 +1,43 @@
 #include <stdio.h>
 
 int main(void) {
-	int ADD = 'A' + 'D' + 'D';
-	int SUB = 'S' + 'U' + 'B';
-	int DIV = 'D' + 'I' + 'V';
-	int MUL = 'M' + 'U' + 'L';
-	int MOD = 'M' + 'O' + 'D';
+	int ADD = 'A' + 'D';
+	int SUB = 'S' + 'B';
+	int DIV = 'D' + 'V';
+	int MUL = 'M' + 'L';
+	int MOD = 'M' + 'D';
 
-	int JMP = 'J' + 'M' + 'P';
-	int JNE = 'J' + 'N' + 'E';
-	int JEQ = 'J' + 'E' + 'Q';
-	int JGR = 'J' + 'G' + 'R';
-	int JLE = 'J' + 'L' + 'E';
-	int CMP = 'C' + 'M' + 'P';
-	int TST = 'T' + 'S' + 'T';
-	int HLT = 'H' + 'L' + 'T';
-	int NOP = 'N' + 'O' + 'P';
-	int CLL = 'C' + 'L' + 'L';
-	int RET = 'R' + 'E' + 'T';
-	int TRP = 'T' + 'R' + 'P';
-	int KLL = 'K' + 'L' + 'L';
-	int HCF = 'H' + 'C' + 'F';
+	int JMP = 'J' + 'P';
+	int JNE = 'J' + 'E';
+	int JGR = 'J' + 'R';
+	int JEQ = 'J' + 'Q';
+	int JLE = 'J' + 'E';
+	int CMP = 'C' + 'P';
+	int TST = 'T' + 'T';
+	int HLT = 'H' + 'T';
+	int NOP = 'N' + 'P';
+	int CLL = 'C' + 'L';
+	int RET = 'R' + 'T';
+	int TRP = 'T' + 'P';
+	int KLL = 'K' + 'L';
+	int HCF = 'H' + 'F';
 
-	int AND = 'A' + 'N' + 'D';
-	int OR = ' ' + 'O' + 'R';
-	int XOR = 'X' + 'O' + 'R';
-	int NOR = 'N' + 'O' + 'R';
-	int NOT = 'N' + 'O' + 'T';
-	int LSR = 'L' + 'S' + 'R';
-	int LSL = 'L' + 'S' + 'L';
+	int AND = 'A' + 'D';
+	int OR = ' ' + 'R';
+	int XOR = 'X' + 'R';
+	int NOR = 'N' + 'R';
+	int NOT = 'N' + 'T';
+	int LSR = 'L' + 'R';
+	int LSL = 'L' + 'L';
 
-	int MOV = 'M' + 'O' + 'V';
-	int SWP = 'S' + 'W' + 'P';
-	int PSH = 'P' + 'S' + 'H';
-	int POP = 'P' + 'O' + 'P';
-	int LEA = 'L' + 'E' + 'A';
-	int IN = ' ' + 'I' + 'N';
-	int OUT = 'O' + 'U' + 'T';
-	int END = 'E' + 'N' + 'D';
+	int MOV = 'M' + 'V';
+	int SWP = 'S' + 'P';
+	int PSH = 'P' + 'H';
+	int POP = 'P' + 'P';
+	int LEA = 'L' + 'A';
+	int IN = ' ' + 'N';
+	int OUT = 'O' + 'T';
+	int END = 'E' + 'D';
 
 	printf("ADD: %d\n", ADD);
 	printf("SUB: %d\n", SUB);

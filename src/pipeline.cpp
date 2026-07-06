@@ -21,6 +21,10 @@
  *
 *******************************************************************************/
 
+struct program_code fetch(){
+
+} // fetch
+
 /*******************************************************************************
  *
  * Function name: decode
@@ -49,7 +53,7 @@ struct shell_code decode(struct program_code fetch) {
 	decode.dest = fetch.dest[1];
 
 	return decode;
-}
+} // decode
 
 /*******************************************************************************
  *
@@ -69,4 +73,4 @@ struct shell_code decode(struct program_code fetch) {
 bool execute(struct shell_code decode) {
 	
 
-}
+} // execute
