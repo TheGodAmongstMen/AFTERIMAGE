@@ -1,43 +1,45 @@
 #include <stdio.h>
 
+#define OPCODE(a, b, c, d) (((a) << 24) | ((b) << 16) | ((c) << 8) | (d)) 
+
 int main(void) {
-	int ADD = 'A' + 'D';
-	int SUB = 'S' + 'B';
-	int DIV = 'D' + 'V';
-	int MUL = 'M' + 'L';
-	int MOD = 'M' + 'D';
+	int ADD = OPCODE(' ', 'A', 'D', 'D');
+	int SUB = OPCODE(' ', 'S', 'U', 'B');
+	int DIV = OPCODE(' ', 'D', 'I', 'V');
+	int MUL = OPCODE(' ', 'M', 'U', 'L');
+	int MOD = OPCODE(' ', 'M', 'O', 'D');
 
-	int JMP = 'J' + 'P';
-	int JNE = 'J' + 'E';
-	int JGR = 'J' + 'R';
-	int JEQ = 'J' + 'Q';
-	int JLE = 'J' + 'E';
-	int CMP = 'C' + 'P';
-	int TST = 'T' + 'T';
-	int HLT = 'H' + 'T';
-	int NOP = 'N' + 'P';
-	int CLL = 'C' + 'L';
-	int RET = 'R' + 'T';
-	int TRP = 'T' + 'P';
-	int KLL = 'K' + 'L';
-	int HCF = 'H' + 'F';
+	int JMP = OPCODE(' ', 'J', 'M', 'P');
+	int JNE = OPCODE(' ', 'J', 'N', 'E');
+	int JGR = OPCODE(' ', 'J', 'G', 'R');
+	int JEQ = OPCODE(' ', 'J', 'E', 'Q');
+	int JLE = OPCODE(' ', 'J', 'L', 'E');
+	int CMP = OPCODE(' ', 'C', 'M', 'P');
+	int TST = OPCODE('T', 'E', 'S', 'T');
+	int HLT = OPCODE('H', 'A', 'L', 'T');
+	int NOP = OPCODE(' ', 'N', 'O', 'P');
+	int CLL = OPCODE('C', 'A', 'L', 'L');
+	int RET = OPCODE(' ', 'R', 'E', 'T');
+	int TRP = OPCODE('T', 'R', 'A', 'P');
+	int KLL = OPCODE('K', 'I', 'L', 'L');
+	int HCF = OPCODE(' ', 'H', 'C', 'F');
 
-	int AND = 'A' + 'D';
-	int OR = ' ' + 'R';
-	int XOR = 'X' + 'R';
-	int NOR = 'N' + 'R';
-	int NOT = 'N' + 'T';
-	int LSR = 'L' + 'R';
-	int LSL = 'L' + 'L';
+	int AND = OPCODE(' ', 'A', 'N', 'D');
+	int  OR = OPCODE(' ', ' ', 'O', 'R');
+	int XOR = OPCODE(' ', 'X', 'O', 'R');
+	int NOR = OPCODE(' ', 'N', 'O', 'R');
+	int NOT = OPCODE(' ', 'N', 'O', 'T');
+	int LSR = OPCODE(' ', 'L', 'S', 'R');
+	int LSL = OPCODE(' ', 'L', 'S', 'L');
 
-	int MOV = 'M' + 'V';
-	int SWP = 'S' + 'P';
-	int PSH = 'P' + 'H';
-	int POP = 'P' + 'P';
-	int LEA = 'L' + 'A';
-	int IN = ' ' + 'N';
-	int OUT = 'O' + 'T';
-	int END = 'E' + 'D';
+	int MOV = OPCODE(' ', 'M', 'O', 'V');
+	int SWP = OPCODE(' ', 'S', 'W', 'P');
+	int PSH = OPCODE('P', 'U', 'S', 'H');
+	int POP = OPCODE(' ', 'P', 'O', 'P');
+	int LEA = OPCODE(' ', 'L', 'E', 'A');
+	int  IN = OPCODE(' ', ' ', 'I', 'N');
+	int OUT = OPCODE(' ', 'O', 'U', 'T');
+	int END = OPCODE(' ', 'E', 'N', 'D');
 
 	printf("ADD: %d\n", ADD);
 	printf("SUB: %d\n", SUB);
@@ -58,7 +60,7 @@ int main(void) {
 	printf("RET: %d\n", RET);
 	printf("TRP: %d\n", TRP);
 	printf("KLL: %d\n", KLL);
-	printf("HCF: %d\n", HLT);
+	printf("HCF: %d\n", HCF);
 
 	printf("AND: %d\n", AND);
 	printf("OR: %d\n", OR);

@@ -1,6 +1,8 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
+#define OPCODE(a, b, c, d) (((a) << 24) | ((b) << 16) | ((c) << 8) | (d))
+
 // register struct
 
 // struct for user written code
