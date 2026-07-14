@@ -7,7 +7,7 @@
  * in order pipeline that drives the SIGHTLINE systems.
  *
 *******************************************************************************/
-
+#include "pipeline.h"
 
 /*******************************************************************************
  *
@@ -18,11 +18,36 @@
  * Inputs: pointer to PC, code
  * Outputs: Line struct 
  * Pseudo-code:
- *
+ * Begin
+ * 	Set opcode 
+ * 	Set src1
+ * 	set src2
+ * 	set dest
+ * 	return
+ * End
 *******************************************************************************/
+#include <stdio.h> //for debugging
 
-struct program_code fetch(){
+struct program_code fetch(char line[16]){
+	struct program_code code;
+	code.opcode[0] = line[0];
+	code.opcode[1] = line[1];
+	code.opcode[2] = line[2];
 
+
+	code.src1[0] = ' ';
+	code.src1[1] = line[4];
+	
+	code.src2[0] = ' ';
+	code.src2[1] = line[6];
+
+	code.dest[0] = ' ';
+	code.dest[1] = line[8];
+
+	printf("Op: %s\nSrc1: %s\nSrc2: %s\nDest: %s\n", 
+			code.opcode, code.src1, code.src2, code.dest);
+	decode(code);
+	return code;
 } // fetch
 
 /*******************************************************************************
@@ -45,13 +70,15 @@ struct program_code fetch(){
 *******************************************************************************/
 
 struct shell_code decode(struct program_code fetch) {
+	printf("Decoding...\n");
 	// Characters are just numbers
 	struct shell_code decode;
-	decode.op = fetch.opcode[0] + fetch.opcode[1] + fetch.opcode[2] + fetch.opcode[3];
+	decode.op = (((fetch.opcode[0] - 1) << 6) | ((fetch.opcode[1] - 1) << 2) | (fetch.opcode[3]));
 	decode.src1 = fetch.src1[1];
 	decode.src2 = fetch.src2[1];
 	decode.dest = fetch.dest[1];
 
+	printf("Op: %d\nSrc1: %d\nSrc2: %d\nDest:%d", decode.op, decode.src1, decode.src2, decode.dest);
 	return decode;
 } // decode
 
@@ -68,9 +95,8 @@ struct shell_code decode(struct program_code fetch) {
  * 	
  * End
 *******************************************************************************/
-#include opcodes.h
 
 bool execute(struct shell_code decode) {
 	
-
+	return false;
 } // execute

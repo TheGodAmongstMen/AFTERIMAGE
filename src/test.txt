@@ -1,2 +1,3 @@
-MOV 5 r1
-ADD r1 5 r2
+MOV 5 X
+ADD X 5 Y
+SWP X Y
