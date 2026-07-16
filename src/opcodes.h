@@ -1,5 +1,5 @@
-#IFNDEF OPCODES.H
-#DEFINE OPCODES.H
+#ifndef OPCODES_H
+#define OPCODES_H
 
 #define ADD 4428
 #define SUB 5586
@@ -35,13 +35,29 @@
 #define IN 2030
 #define OUT 5076
 
+#include "structs.h"
+
 // Arithmetic Ops
-int ADD(int src1, int src2);
-int SUB(int src1, int src2);
-int MUL(int src1, int src2);
-int DIV(int src1, int src2);
-int MOD(int src1, int src2);
+void add_op(int r1, int r2, int r3, struct regs *mem);
+void sub_op(int r1, int r2, int r3, struct regs *mem);
+void div_op(int r1, int r2, int r3, struct regs *mem);
+void mul_op(int r1, int r2, int r3, struct regs *mem);
+void mod_op(int r1, int r2, int r3, struct regs *mem);
 
+// Jump Ops
+// TODO: Figure out how I want jump to work
 
+// Logic Ops
+int and(int r1, int r2);
+int or(int r1, int r2);
+int xor(int r1, int r2);
+int nor(int r1, int r2);
+int not(int r1);
+int lsr(int r1);
+int lsl(int r1);
 
-#ENDIF
+// Misc Ops
+int mov(int r1);
+int swp(int r1, int r2);
+
+#endif

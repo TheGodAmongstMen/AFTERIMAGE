@@ -4,8 +4,8 @@
 #include "structs.h"
 #include <stdlib.h>
 
-struct program_code fetch(char line[16]);
-struct shell_code decode(struct program_code fetch);
-bool execute(struct shell_code decode);
+void fetch(char line[16], struct regs *mem);
+void decode(struct program_code fetch, struct regs *mem);
+void execute(struct shell_code decode, struct regs *mem);
 
 #endif
