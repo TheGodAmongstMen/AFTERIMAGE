@@ -74,7 +74,7 @@ void decode(struct program_code fetch, struct regs *mem) {
 	printf("Decoding...\n");
 	// Characters are just numbers
 	struct shell_code dec;
-	dec.op = (((fetch.opcode[0] - 1) << 6) | ((fetch.opcode[1] - 1) << 2) | (fetch.opcode[3]));
+	dec.op = ((fetch.opcode[0] << 8) | (fetch.opcode[1] << 4) | (fetch.opcode[3]));
 	dec.src1 = fetch.src1[1];
 	dec.src2 = fetch.src2[1];
 	dec.dest = fetch.dest[1];
@@ -99,7 +99,89 @@ void decode(struct program_code fetch, struct regs *mem) {
 #include "opcodes.h"
 
 void execute(struct shell_code decode, struct regs *mem) {
-	//TODO: All of this
-	if(decode.op == 4990)
-		add_op(decode.src1, decode.src2, decode.dest, mem);
+	switch(decode.op) {
+		case ADD:
+			add(decode.src1, decode.src2, decode.dest, mem); break;
+		case SUB:
+			sub(decode.src1, decode.src2, decode.dest, mem); break;
+		case DIV:
+			div_op(decode.src1, decode.src2, decode.dest, mem); break;
+		case MUL:
+			mul(decode.src1, decode.src2, decode.dest, mem); break;
+		case MOD:
+			mod(decode.src1, decode.src2, decode.dest, mem); break;
+		case JMP:
+			//TODO
+			break;
+		case JNE:
+			//TODO
+			break;
+		case JEQ:
+			//TODO 
+			break;
+		case JGR:
+			//TODO
+			break;
+		case JLE:
+			//TODO
+			break;
+		case CMP:
+			//TODO
+			break;
+		case TST:
+			//TODO
+			break;
+		case HLT:
+			//TODO
+			break;
+		case NOP:
+			//TODO
+			break;
+		case CLL:
+			//TODO
+			break;
+		case RET:
+			//TODO
+			break;
+		case TRP:
+			//TODO
+			break;
+		case KLL:
+			//TODO
+			break;
+		case HCF:
+			//TODO
+			break;
+		case AND:
+			and(decode.src1, decode.src2, decode.dest, mem); break;
+		case OR:
+			or(decode.src1, decode.src2, decode.dest, mem); break;
+		case XOR:
+			xor(decode.src1, decode.src2, decode.dest, mem); break;
+		case NOR:
+			nor(decode.src1, decode.src2, decode.dest, mem); break;
+		case NOT:
+			not(decode.src1, mem); break;
+		case LSR:
+			lsr(decode.src1, decode.dest, decode.src2, mem); break;
+		case LSL:
+			lsl(decode.src2, decode.dest, decode.src2, mem); break;
+		case MOV:
+			//TODO
+			break;
+		case SWP:
+			//TODO
+			break;
+		case PSH:
+			//TODO
+			break;
+		case POP:
+			//TODO
+			break;
+		case LEA:
+			//TODO
+			break;
+		default:
+			break;
+	} // switch
 } // execute

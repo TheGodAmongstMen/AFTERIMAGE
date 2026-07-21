@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define OPCODE(a, b, c) (((a - 1) << 6) | ((b - 1) << 2) | ((c))) 
+#define OPCODE(a, b, c) ((a << 8) | (b << 4) | (c)) 
 
 int main(void) {
 	int ADD = OPCODE('A', 'D', 'D');
@@ -37,8 +37,6 @@ int main(void) {
 	int PSH = OPCODE('U', 'S', 'H');
 	int POP = OPCODE('P', 'O', 'P');
 	int LEA = OPCODE('L', 'E', 'A');
-	int  IN = OPCODE(' ', 'I', 'N');
-	int OUT = OPCODE('O', 'U', 'T');
 
 	printf("#define ADD %d\n", ADD);
 	printf("#define SUB %d\n", SUB);
@@ -62,7 +60,7 @@ int main(void) {
 	printf("#define HCF %d\n", HCF);
 
 	printf("#define AND %d\n", AND);
-	printf("#define OR %d\n", OR);
+	printf("#define  OR %d\n", OR);
 	printf("#define XOR %d\n", XOR);
 	printf("#define NOR %d\n", NOR);
 	printf("#define NOT %d\n", NOT);
@@ -74,8 +72,6 @@ int main(void) {
 	printf("#define PSH %d\n", PSH);
 	printf("#define POP %d\n", POP);
 	printf("#define LEA %d\n", LEA);
-	printf("#define IN %d\n", IN);
-	printf("#define OUT %d\n", OUT);
 
 	return 0;
 }

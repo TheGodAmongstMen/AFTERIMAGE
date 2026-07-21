@@ -1,63 +1,64 @@
 #ifndef OPCODES_H
 #define OPCODES_H
 
-#define ADD 4428
-#define SUB 5586
-#define DIV 4598
-#define MUL 4956
-#define MOD 4988
-#define JMP 4976
-#define JNE 4981
-#define JEQ 4945
-#define JGR 4954
-#define JLE 4973
-#define CMP 4592
-#define TST 5596
-#define HLT 4604
-#define NOP 4984
-#define CLL 4588
-#define RET 5460
-#define TRP 5588
-#define KLL 5100
-#define HCF 4558
-#define AND 4468
-#define OR 2042
-#define XOR 5626
-#define NOR 4986
-#define NOT 4988
-#define LSR 5082
-#define LSL 5068
-#define MOV 4990
-#define SWP 5592
-#define PSH 5448
-#define POP 5112
-#define LEA 5073
-#define IN 2030
-#define OUT 5076
+#define ADD 17732
+#define SUB 22354
+#define DIV 17622
+#define MUL 19804
+#define MOD 19956
+#define JMP 20176
+#define JNE 20197
+#define JEQ 20049
+#define JGR 20082
+#define JLE 20165
+#define CMP 18384
+#define TST 21876
+#define HLT 19668
+#define NOP 20208
+#define CLL 18380
+#define RET 22100
+#define TRP 21872
+#define KLL 20428
+#define HCF 19574
+#define AND 17892
+#define  OR 9458
+#define XOR 23794
+#define NOR 20210
+#define NOT 20212
+#define LSR 19826
+#define LSL 19836
+#define MOV 19958
+#define SWP 22384
+#define PSH 21880
+#define POP 21744
+#define LEA 19537
 
 #include "structs.h"
 
 // Arithmetic Ops
-void add_op(int r1, int r2, int r3, struct regs *mem);
-void sub_op(int r1, int r2, int r3, struct regs *mem);
+void add(int r1, int r2, int r3, struct regs *mem);
+void sub(int r1, int r2, int r3, struct regs *mem);
 void div_op(int r1, int r2, int r3, struct regs *mem);
-void mul_op(int r1, int r2, int r3, struct regs *mem);
-void mod_op(int r1, int r2, int r3, struct regs *mem);
+void mul(int r1, int r2, int r3, struct regs *mem);
+void mod(int r1, int r2, int r3, struct regs *mem);
 
 // Jump Ops
 // TODO: Figure out how I want jump to work
 
 // Logic Ops
-int and(int r1, int r2);
-int or(int r1, int r2);
-int xor(int r1, int r2);
-int nor(int r1, int r2);
-int not(int r1);
-int lsr(int r1);
-int lsl(int r1);
+void and(int r1, int r2, int r3, struct regs *mem);
+void or(int r1, int r2, int r3, struct regs *mem);
+void xor(int r1, int r2, int r3, struct regs *mem);
+void nor(int r1, int r2, int r3, struct regs *mem);
+void not(int r1, struct regs *mem);
+void lsr(int r1, int r3, int dist, struct regs *mem);
+void lsl(int r1, int r3, int dist, struct regs *mem);
 
 // Misc Ops
-int mov(int r1);
-int swp(int r1, int r2);
+void mov(int r1);
+void swp(int r1, int r2);
+//int psh(int r1);
+//int pop(int r1);
+//int lea();
 
 #endif
