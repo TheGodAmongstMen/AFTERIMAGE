@@ -23,4 +23,5 @@ struct regs* reg_setup(void){
 	mem->LR = 0;
 	mem->SIG = 0;
 	mem->cycles = 0;
+	return mem;
 }

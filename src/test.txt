@@ -1,3 +1,0 @@
-MOV 5 X
-ADD X 5 Y
-SWP X Y

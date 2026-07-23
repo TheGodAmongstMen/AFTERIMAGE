@@ -55,8 +55,8 @@ void lsr(int r1, int r3, int dist, struct regs *mem);
 void lsl(int r1, int r3, int dist, struct regs *mem);
 
 // Misc Ops
-void mov(int r1);
-void swp(int r1, int r2);
+void mov(int r1, int r2, struct regs *mem);
+void swp(int r1, int r2, struct regs *mem);
 //int psh(int r1);
 //int pop(int r1);
 //int lea();

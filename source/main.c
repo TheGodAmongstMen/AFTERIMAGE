@@ -26,7 +26,7 @@ int main(void){
 	printf("\n");
 
 	struct shell_code line;
-	line.op = 4428;
+	line.op = 19958;
 	line.src1 = mem->r1;
 	line.src2 = mem->r2;
 	line.dest = mem->r3;

@@ -16,7 +16,7 @@ struct regs {
 	uint32_t SP;
 	uint32_t LR;
 	uint32_t SIG;
-	uint32_t cycles;
+	uint32_t RESERVED;
 };
 
 // struct for user written code

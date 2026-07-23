@@ -167,11 +167,11 @@ void execute(struct shell_code decode, struct regs *mem) {
 		case LSL:
 			lsl(decode.src2, decode.dest, decode.src2, mem); break;
 		case MOV:
-			//TODO
+			printf("Src1: %d\nDest: %d\n", decode.src1, decode.dest);
+			mov(decode.src1, decode.dest, mem); 
 			break;
 		case SWP:
-			//TODO
-			break;
+			swp(decode.src1, decode.src2, mem); break;
 		case PSH:
 			//TODO
 			break;
